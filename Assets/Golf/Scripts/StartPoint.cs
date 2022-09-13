@@ -6,9 +6,9 @@ using UnityEngine.UI;
 public class StartPoint : MonoBehaviour
 {
     public int points;
-    public Text countText;
+    public Text strokeText;
     public Text winText;
-    public int numberOfBalls = 12;
+    public int numberOfBalls = 1;
     public int ballsRemaining;
     public float ballSpawn;
     public ClubHeadFollower club;
@@ -39,21 +39,19 @@ public class StartPoint : MonoBehaviour
         }
     }
 
-    void SetCountText()
+    void SetStrokeText()
     {
-        countText.text = "Score: " + points.ToString();
-        if (points >= numberOfBalls * 3)
-        {
-
-            winText.text = "You Win!";
-        }
+        strokeText.text = "Strokes: " + points.ToString();
+        
     }
 
+    /*
     public void AddPoints(int value)
     {
         points += value;
         SetCountText();
     }
+    */
 
     public void LoadNewGame()
     {
@@ -61,9 +59,8 @@ public class StartPoint : MonoBehaviour
         
         points = 0;
         ballSpawn = -1.9f;
-        SetCountText();
+        SetStrokeText();
         winText.text = "";
-        SetCountText();
         LoadBalls(numberOfBalls);
     }
 }
