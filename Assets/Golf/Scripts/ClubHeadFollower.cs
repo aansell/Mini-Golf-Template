@@ -6,7 +6,7 @@ public class ClubHeadFollower : MonoBehaviour
 
 
 {
-	private ClubHead batFollower;
+	private ClubHead clubFollower;
 	private Rigidbody rb;
 	private Vector3 velocity;
 
@@ -26,7 +26,7 @@ public class ClubHeadFollower : MonoBehaviour
 
 	private void FixedUpdate()
 	{
-		Vector3 destination = batFollower.transform.position;
+		Vector3 destination = clubFollower.transform.position;
 		
 		rb.transform.rotation = transform.rotation;
 		
@@ -34,12 +34,12 @@ public class ClubHeadFollower : MonoBehaviour
 
 		rb.velocity = velocity;
 		
-		transform.rotation = batFollower.transform.rotation;
+		transform.rotation = clubFollower.transform.rotation;
 	}
 
-	public void SetFollowTarget(ClubHead _batFollower)
+	public void SetFollowTarget(ClubHead _clubFollower)
 	{
-		batFollower = _batFollower;
+		clubFollower = _clubFollower;
 	}
 
 	private void OnCollisionEnter(Collision other)
@@ -48,10 +48,7 @@ public class ClubHeadFollower : MonoBehaviour
 		{
 			strokeCount++;
 
-			if (strokeCount >= start.numberOfBalls)
-			{
-				start.LoadNewGame();
-			}
+			
 		}
 	}
 }
