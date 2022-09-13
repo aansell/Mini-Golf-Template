@@ -29,7 +29,7 @@ public class Hole : MonoBehaviour
         if (collision.gameObject.CompareTag("Ball"))
         {
             collision.gameObject.SetActive(false);
-            start.AddPoints(pointValue);
+            //start.AddPoints(pointValue);
             //EndLevel();
         }
     }
