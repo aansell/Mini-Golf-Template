@@ -22,10 +22,10 @@ public class BallManager : MonoBehaviour
 
     public void MoveToBall()
     {
-        if (this.gameObject.GetComponent<Rigidbody>().velocity.magnitude != 0 && Vector3.Distance(this.transform.position, FindObjectOfType<XROrigin>().gameObject.transform.position) >= 1)
+        if (this.gameObject.GetComponent<Rigidbody>().velocity.magnitude == 0 && Vector3.Distance(this.transform.position, FindObjectOfType<XROrigin>().gameObject.transform.position) >= 1)
         {
             GameObject XRSetup = FindObjectOfType<XROrigin>().gameObject;
-            XRSetup.transform.position = this.transform.position;
+            XRSetup.transform.position = this.transform.position + new Vector3(0f, 0.95f, 0f);
             lastLocation = this.transform.position;
             score++;
         }
