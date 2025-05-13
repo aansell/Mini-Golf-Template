@@ -1,13 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+using TMPro;
 
 public class StartPoint : MonoBehaviour
 {
     public int points;
-    public Text strokeText;
-    public Text winText;
+    public TextMeshProUGUI strokeText;
+    public TextMeshProUGUI winText;
     public int numberOfBalls = 1;
     public int ballsRemaining;
     public float ballSpawn;
@@ -19,7 +19,7 @@ public class StartPoint : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        club = FindObjectOfType<ClubHeadFollower>();
+        club = FindFirstObjectByType<ClubHeadFollower>();
         LoadNewGame();
     }
 

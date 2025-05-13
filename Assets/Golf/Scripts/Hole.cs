@@ -12,7 +12,7 @@ public class Hole : MonoBehaviour
     void Start()
     {
         
-        start = FindObjectOfType<StartPoint>();
+        start = FindFirstObjectByType<StartPoint>();
         float distance = Mathf.Abs(start.transform.position.x - transform.position.x);
         pointValue = (int)Mathf.Round((distance * distance) / 16);
         

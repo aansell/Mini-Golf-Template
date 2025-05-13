@@ -21,7 +21,7 @@ public class ClubHeadFollower : MonoBehaviour
 	private void Start()
 	{
 		rb = GetComponent<Rigidbody>();
-		start = FindObjectOfType<StartPoint>();
+		start = FindFirstObjectByType<StartPoint>();
 	}
 
 	private void FixedUpdate()
@@ -32,7 +32,7 @@ public class ClubHeadFollower : MonoBehaviour
 		
 		velocity = (destination - rb.transform.position) * sensitivity;
 
-		rb.velocity = velocity;
+		rb.linearVelocity = velocity;
 		
 		transform.rotation = clubFollower.transform.rotation;
 	}
